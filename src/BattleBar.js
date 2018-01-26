@@ -1,4 +1,5 @@
 import React from "react"
+import "./App.css"
 
 const BattleBar = ({ points, resetGame }) => {
   if (points >= 20) {
@@ -20,21 +21,19 @@ const BattleBar = ({ points, resetGame }) => {
   }
 
   return (
-    <div
-      style={{
-        width: 400,
-        height: 20,
-        margin: "auto",
-        borderRadius: 20,
-        border: "3px solid green",
-        overflow: "hidden",
-      }}
-    >
+    <div className="battle-bar">
       <div
+        className="progress-bar"
         style={{
           width: `${points / 20 * 100}%`,
-          height: 20,
-          background: "red",
+          backgroundColor: "blue",
+        }}
+      />
+      <div
+        className="progress-bar"
+        style={{
+          width: `${(20 - points) / 20 * 100}%`,
+          backgroundColor: "red",
         }}
       />
     </div>
